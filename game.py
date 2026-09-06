@@ -13,11 +13,13 @@ print("Your goal is to keep the kingdom running for as long as possible!")
 print("To do this, you'll have to manage four stats. If any of these stats reach 0 ... game over.")
 print()
 
-print("~Kingdom Stats~")
+print("~Initial Kingdom Stats~")
 print( f"   Treasury: {Treasury}")
 print( f"   Military: {Military}")
 print( f"   Food: {Food}")
 print( f"   Reputation: {Reputation}")
+
+input("Press ENTER to begin your day...")
 
 situations = [
     {
@@ -29,8 +31,80 @@ situations = [
 
     {
         "person": "General",
-        "text": "We need to train more soldiers! If we don't, we will be vulnerable to attack.",
+        "text": "⚔︎ We need to train more soldiers! If we don't, we will be vulnerable to attack. ⚔︎",
         "yes": {"military": 10, "treasury": -10},
         "no": {"military": -10, "treasury": 10}
     }
 ]
+
+import random
+
+while len(situations) > 0:
+
+    situation = random.choice(situations)
+
+    print()
+    print("------------------------------")
+    print(situation["person"])
+    print(situation["text"])
+    print("------------------------------")
+
+    choice = input("YES or NO: ").strip().upper()
+
+    if choice == "yes":
+        changes = situation["yes"]
+
+    elif choice == "yes":
+        changes = situation["no"]
+
+    else:
+        print("Please enter yes or no")
+        continue
+
+    
+    for stat, amount in changes.items():
+        if stat == "Treasury":
+            Treasury += amount
+        elif stat == "Military":
+            Military += amount
+        elif stat == "Food":
+            Food += amount
+        elif stat == "Reputation":
+            R += amount
+
+   
+    situations.remove(situation)
+
+    print()
+
+   if Treasury <= 0:
+        print("━─━────༺༻────━─━")
+        print("     FAILURE")
+        print("━─━────༺༻────━─━")
+        print("You have run out of money.")
+        print("The kingdom can no longer afford to function.")
+        break
+
+    elif Military <= 0:
+        print("━─━────༺༻────━─━")
+        print("     FAILURE")
+        print("━─━────༺༻────━─━")
+        print("Your military has completely collapsed.")
+        print("The kingdom is left defenseless.")
+        break
+
+    elif Food <= 0:
+        print("━─━────༺༻────━─━")
+        print("     FAILURE")
+        print("━─━────༺༻────━─━")
+        print("The kingdom has run out of food.")
+        print("Your people cannot survive.")
+        break
+
+    elif Reputation <= 0:
+        print("━─━────༺༻────━─━")
+        print("     FAILURE")
+        print("━─━────༺༻────━─━")
+        print("You have lost the people's trust.")
+        print("Your reign has come to an end.")
+        break
