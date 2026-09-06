@@ -108,3 +108,25 @@ while len(situations) > 0:
         print("You have lost the people's trust.")
         print("Your reign has come to an end.")
         break
+
+if (
+    len(situations) == 0
+    and treasury > 0
+    and military > 0
+    and food > 0
+    and reputation > 0
+):
+    print()
+    print("∘₊✧──────✧₊∘∘₊✧──────✧₊∘")
+    print("        Day Over")
+    print("∘₊✧──────✧₊∘∘₊✧──────✧₊∘")
+    print()
+    print("The day is finally over!")
+    print("Another day having passed without")
+    print("the kingdom falling apart.")
+    print()
+    print("Final Kingdom Stats:")
+    print(f"Treasury:    {treasury}")
+    print(f"Military:    {military}")
+    print(f"Food:        {food}")
+    print(f"Reputation:  {reputation}")
