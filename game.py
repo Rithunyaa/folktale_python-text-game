@@ -38,6 +38,8 @@ situations = [
     }
 ]
 
+
+
 import random
 
 while len(situations) > 0:
@@ -63,8 +65,8 @@ while len(situations) > 0:
         continue
     
 print()
-print("CONSEQUENCES")
-print("------------------------------")
+print("Results")
+print("---------")
 
 for stat, amount in changes.items():
 
@@ -84,6 +86,14 @@ for stat, amount in changes.items():
         print(f"{stat.capitalize()}: +{amount}")
     elif amount < 0:
         print(f"{stat.capitalize()}: {amount}")
+
+print()
+print("UPDATED KINGDOM STATS")
+print("------------------------")
+print(f"Treasury:    {Treasury}")
+print(f"Military:    {Military}")
+print(f"Food:        {Food}")
+print(f"Reputation:  {Reputation}")
 
    
     situations.remove(situation)
