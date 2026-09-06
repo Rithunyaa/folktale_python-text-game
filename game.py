@@ -1,8 +1,8 @@
 # stats that you start with
 
 Treasury = 100
-Military = 50
-Food = 50
+Military = 100
+Food = 100
 Reputation = 100
 
 
@@ -166,9 +166,8 @@ if (
 
     print()
 
-    print("The day is finally over!")
-    print("Another day having passed without")
-    print("the kingdom falling apart.")
+    print("Another day has passed without the kingdom falling apart!")
+    print("         Thank you for playing this game!")
 
     print()
 
