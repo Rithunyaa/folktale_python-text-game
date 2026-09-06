@@ -1,46 +1,55 @@
-#stats that you start with
+# stats that you start with
+
 Treasury = 100
 Military = 50
 Food = 50
 Reputation = 100
 
-#game title, the first few things that show up that tell you what is happening
+
+# game title, the first few things that show up that tell you what is happening
+
 print("        ✦ •······················• ✦ •······················• ✦")
 print("                    Your Majesty, We Have A Problem")
 print("        ✦ •······················• ✦ •······················• ✦")
 print()
+
 print("Your goal is to keep the kingdom running for as long as possible!")
 print("To do this, you'll have to manage four stats. If any of these stats reach 0 ... game over.")
 print()
 
 print("~Initial Kingdom Stats~")
-print( f"   Treasury: {Treasury}")
-print( f"   Military: {Military}")
-print( f"   Food: {Food}")
-print( f"   Reputation: {Reputation}")
+
+print(f"   Treasury: {Treasury}")
+print(f"   Military: {Military}")
+print(f"   Food: {Food}")
+print(f"   Reputation: {Reputation}")
+
 print()
 
-input("Press ENTER to begin your day...")
+input("Press ENTER to begin your day!   ")
+
 
 situations = [
+
     {
         "person": "Farmer",
         "text": "ঌ All my crops burned down!! Please give me more food to feed my family! ঌ",
-        "yes": {"food": -10, "reputation": 10},
-        "no": {"food": 10, "reputation": -10}
+        "yes": {"food": -20, "reputation": 20},
+        "no": {"food": 20, "reputation": -20}
     },
 
     {
         "person": "General",
         "text": "⚔︎ We need to train more soldiers! If we don't, we will be vulnerable to attack. ⚔︎",
-        "yes": {"military": 10, "treasury": -10},
-        "no": {"military": -10, "treasury": 10}
+        "yes": {"military": 20, "treasury": -20},
+        "no": {"military": -20, "treasury": 20}
     }
+
 ]
 
 
-
 import random
+
 
 while len(situations) > 0:
 
@@ -54,51 +63,57 @@ while len(situations) > 0:
 
     choice = input("YES or NO: ").strip().upper()
 
-    if choice == "yes":
+    if choice == "YES":
         changes = situation["yes"]
 
-    elif choice == "yes":
+    elif choice == "NO":
         changes = situation["no"]
 
     else:
         print("Please enter either YES or NO!")
         continue
-    
-print()
-print("Results")
-print("---------")
 
-for stat, amount in changes.items():
 
-    if stat == "treasury":
-        treasury += amount
+    print()
+    print("Results")
+    print("---------")
 
-    elif stat == "military":
-        military += amount
 
-    elif stat == "food":
-        food += amount
+    for stat, amount in changes.items():
 
-    elif stat == "reputation":
-        reputation += amount
+        if stat == "treasury":
+            Treasury += amount
 
-    if amount > 0:
-        print(f"{stat.capitalize()}: +{amount}")
-    elif amount < 0:
-        print(f"{stat.capitalize()}: {amount}")
+        elif stat == "military":
+            Military += amount
 
-print()
-print("UPDATED KINGDOM STATS")
-print("------------------------")
-print(f"Treasury:    {Treasury}")
-print(f"Military:    {Military}")
-print(f"Food:        {Food}")
-print(f"Reputation:  {Reputation}")
+        elif stat == "food":
+            Food += amount
 
-   
+        elif stat == "reputation":
+            Reputation += amount
+
+        if amount > 0:
+            print(f"{stat.capitalize()}: +{amount}")
+
+        elif amount < 0:
+            print(f"{stat.capitalize()}: {amount}")
+
+
+    print()
+    print("UPDATED KINGDOM STATS")
+    print("------------------------")
+
+    print(f"Treasury:    {Treasury}")
+    print(f"Military:    {Military}")
+    print(f"Food:        {Food}")
+    print(f"Reputation:  {Reputation}")
+
+
     situations.remove(situation)
 
     print()
+
 
     if Treasury <= 0:
         print("━─━────༺༻────━─━")
@@ -132,24 +147,33 @@ print(f"Reputation:  {Reputation}")
         print("Your reign has come to an end.")
         break
 
+    input("\nPress ENTER to continue   ")
+
+
 if (
     len(situations) == 0
-    and treasury > 0
-    and military > 0
-    and food > 0
-    and reputation > 0
+    and Treasury > 0
+    and Military > 0
+    and Food > 0
+    and Reputation > 0
 ):
+
     print()
+
     print("∘₊✧──────✧₊∘∘₊✧──────✧₊∘")
     print("        Day Over")
     print("∘₊✧──────✧₊∘∘₊✧──────✧₊∘")
+
     print()
+
     print("The day is finally over!")
     print("Another day having passed without")
     print("the kingdom falling apart.")
+
     print()
+
     print("Final Kingdom Stats:")
-    print(f"Treasury:    {treasury}")
-    print(f"Military:    {military}")
-    print(f"Food:        {food}")
-    print(f"Reputation:  {reputation}")
+    print(f"Treasury:    {Treasury}")
+    print(f"Military:    {Military}")
+    print(f"Food:        {Food}")
+    print(f"Reputation:  {Reputation}")
