@@ -18,6 +18,7 @@ print( f"   Treasury: {Treasury}")
 print( f"   Military: {Military}")
 print( f"   Food: {Food}")
 print( f"   Reputation: {Reputation}")
+print()
 
 input("Press ENTER to begin your day...")
 
@@ -58,26 +59,38 @@ while len(situations) > 0:
         changes = situation["no"]
 
     else:
-        print("Please enter yes or no")
+        print("Please enter either YES or NO!")
         continue
-
     
-    for stat, amount in changes.items():
-        if stat == "Treasury":
-            Treasury += amount
-        elif stat == "Military":
-            Military += amount
-        elif stat == "Food":
-            Food += amount
-        elif stat == "Reputation":
-            R += amount
+print()
+print("CONSEQUENCES")
+print("------------------------------")
+
+for stat, amount in changes.items():
+
+    if stat == "treasury":
+        treasury += amount
+
+    elif stat == "military":
+        military += amount
+
+    elif stat == "food":
+        food += amount
+
+    elif stat == "reputation":
+        reputation += amount
+
+    if amount > 0:
+        print(f"{stat.capitalize()}: +{amount}")
+    elif amount < 0:
+        print(f"{stat.capitalize()}: {amount}")
 
    
     situations.remove(situation)
 
     print()
 
-   if Treasury <= 0:
+    if Treasury <= 0:
         print("━─━────༺༻────━─━")
         print("     FAILURE")
         print("━─━────༺༻────━─━")
