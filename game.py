@@ -28,7 +28,7 @@ print()
 
 input("Press ENTER to begin your day!   ")
 
-
+#all of the possible things that can happen to the player
 situations = [
 
     {
@@ -71,10 +71,10 @@ situations = [
     },
 ]
 
-
+#randomize which one
 import random
 
-
+#says the situation and tells you possible answer choices
 while len(situations) > 0:
 
     situation = random.choice(situations)
@@ -97,12 +97,12 @@ while len(situations) > 0:
         print("Please enter either YES or NO!")
         continue
 
-
+#what happens bc of your choice
     print()
     print("Results")
     print("---------")
 
-
+#says how much of each stat is changed
     for stat, amount in changes.items():
 
         if stat == "treasury":
@@ -137,7 +137,7 @@ while len(situations) > 0:
     situations.remove(situation)
 
     print()
-
+#what is said if any of your stats reaches 0
 
     if Treasury <= 0:
         print("━─━────༺༻────━─━")
@@ -173,7 +173,7 @@ while len(situations) > 0:
 
     input("\nPress ENTER to continue   ")
 
-
+#what happens if you finish all the statements
 if (
     len(situations) == 0
     and Treasury > 0
