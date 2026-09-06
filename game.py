@@ -119,32 +119,32 @@ while len(situations) > 0:
         print("━─━────༺༻────━─━")
         print("     FAILURE")
         print("━─━────༺༻────━─━")
-        print("You have run out of money.")
-        print("The kingdom can no longer afford to function.")
+        print("You have no more money left")
+        print("The kingdom cannot pay back its debts anymore")
         break
 
     elif Military <= 0:
         print("━─━────༺༻────━─━")
         print("     FAILURE")
         print("━─━────༺༻────━─━")
-        print("Your military has completely collapsed.")
-        print("The kingdom is left defenseless.")
+        print("Your military has grown weak")
+        print("You have been overrun by bandits")
         break
 
     elif Food <= 0:
         print("━─━────༺༻────━─━")
         print("     FAILURE")
         print("━─━────༺༻────━─━")
-        print("The kingdom has run out of food.")
-        print("Your people cannot survive.")
+        print("The kingdom has run out of food")
+        print("Your people are starving")
         break
 
     elif Reputation <= 0:
         print("━─━────༺༻────━─━")
         print("     FAILURE")
         print("━─━────༺༻────━─━")
-        print("You have lost the people's trust.")
-        print("Your reign has come to an end.")
+        print("The people do not trust you anymore")
+        print("They have revolted against you")
         break
 
     input("\nPress ENTER to continue   ")
