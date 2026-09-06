@@ -34,17 +34,41 @@ situations = [
     {
         "person": "Farmer",
         "text": "ঌ All my crops burned down!! Please give me more food to feed my family! ঌ",
-        "yes": {"food": -20, "reputation": 20},
-        "no": {"food": 20, "reputation": -20}
+        "yes": {"food": -10, "reputation": +15},
+        "no": {"reputation": -25}
     },
 
     {
         "person": "General",
         "text": "⚔︎ We need to train more soldiers! If we don't, we will be vulnerable to attack. ⚔︎",
-        "yes": {"military": 20, "treasury": -20},
-        "no": {"military": -20, "treasury": 20}
-    }
+        "yes": {"military": +20, "treasury": -15},
+        "no": {"military": -5, "reputation": -10}
+    },
 
+    {
+        "person": "Merchant",
+        "text": "☼ The kingdom's marketplace is becoming crowded! Should we build a larger market? ☼",
+        "yes": {"treasury": -25, "reputation": +15},
+        "no": {"treasury": -5, "reputation": -10, "food": -5}
+    },
+    {
+        "person": "Villager",
+        "text": "❀ Our village well has dried up! Please give us coin to build a new one! ❀",
+        "yes": {"treasury": -20, "reputation": +15},
+        "no": {"reputation": -20, "food": -5}
+    },
+    {
+        "person": "Knight",
+        "text": "⚔︎ Bandits have been spotted near the northern village! Should we send soldiers to deal with them? ⚔︎",
+        "yes": {"military": -10, "reputation": +15},
+        "no": {"reputation": -15, "treasury": -10}
+    },
+    {
+        "person": "Royal Treasurer",
+        "text": "₊˚⊹ The treasury is looking rather empty. Should we raise taxes? ⊹˚₊",
+        "yes": {"treasury": +20, "reputation": -30},
+        "no": {"reputation": +5}
+    },
 ]
 
 
